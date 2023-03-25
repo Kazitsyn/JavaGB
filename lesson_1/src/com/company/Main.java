@@ -118,12 +118,11 @@ public class Main {
 //        int a = iScanner.nextInt();
 //        System.out.printf("b: ");
 //        int b = iScanner.nextInt();
-//        int day = 0;
+//        int day = 1;
 //        while (h - a > 0){
 //            h = h - a + b;
 //            day++;
 //        }
-//        day++;
 //        System.out.printf("day: ");
 //        System.out.println(day);
 //        -----------------------------------------------------
@@ -157,23 +156,23 @@ public class Main {
 //        ---------------------------------------------------
 
 //        Scanner iScanner = new Scanner(System.in);
-//        System.out.printf("n: ");
+//        System.out.print("n: ");
 //        int n = iScanner.nextInt();
 //        System.out.println(fact(n));
 //        ---------------------------------------------------
 //        Scanner iScanner = new Scanner(System.in);
-//        System.out.printf("a: ");
+//        System.out.print("a: ");
 //        int a = iScanner.nextInt();
-//        System.out.printf("b: ");
+//        System.out.print("b: ");
 //        int b = iScanner.nextInt();
-//        System.out.printf("c: ");
+//        System.out.print("c: ");
 //        int c = iScanner.nextInt();
 //        for(int i = a; i >= b; i -= 2){
 //            System.out.println(i);
 //        }
 //        ------------------------------------------------
 //        Scanner iScanner = new Scanner(System.in);
-//        System.out.printf("cnt: ");
+//        System.out.print("cnt: ");
 //        int cnt = iScanner.nextInt();
 //        int[] arr = new int[cnt];
 //        int sum = 0;
@@ -191,21 +190,21 @@ public class Main {
 //        }
 //        -----------------------------------------------
         Scanner iScanner = new Scanner(System.in);
-        System.out.printf("cnt: ");
+        System.out.print("cnt: ");
         int cnt = iScanner.nextInt();
         int[] arr = new int[cnt];
-        for (int i = 0; i < arr.length; i++){
+        for (int i = 0; i < arr.length; i++) {
             arr[i] = iScanner.nextInt();
         }
-        for (int i = 0; i < arr.length; i++){
+        for (int k : arr) {
             int cn = 0;
-            for(int j = 0; j < arr.length; j++){
-                if(arr[i] == arr[j]){
+            for (int i : arr) {
+                if (k == i) {
                     cn++;
                 }
             }
-            if (cn == 1){
-                System.out.println(arr[i]);
+            if (cn == 1) {
+                System.out.println(k);
             }
         }
 

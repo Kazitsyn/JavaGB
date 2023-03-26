@@ -45,11 +45,27 @@ Task_4. *
         }
         return arr[n];
     }
-    public static void main(String[] args) {
+
+    public static int[] Task_2(){
         Scanner iScanner = new Scanner(System.in);
-        int n1 = iScanner.nextInt();
-        int n2 = iScanner.nextInt();
-        System.out.println(Task_1(n1));
-        System.out.println(Task_1(n2));
+        int cnt = iScanner.nextInt();
+        int[] arr = new int[cnt];
+        for(int i = 0; i < cnt; i++){
+            System.out.print("arr[ ] = ");
+            arr[i] = iScanner.nextInt();
+        }
+        System.out.print("m = ");
+        int m = iScanner.nextInt();
+        for(int i = 0; i < cnt; i++){
+            arr[i] *= m;
+        }
+        return arr;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = Task_2();
+        for (int item:arr) {
+            System.out.println(item);
+        }
     }
 }

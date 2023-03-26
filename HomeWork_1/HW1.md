@@ -111,3 +111,43 @@ m = 6
 30
 ```
 ----
+## *Task_3*
+* *Реализовать простой калькулятор (+,-,=,*), только с целыми числами.*
+### *Решение:*
+```Java
+import java.util.Scanner;
+
+public class Main {
+
+  public static void Task_3(){
+    Scanner iScanner = new Scanner(System.in);
+    int a = iScanner.nextInt();
+    String sim = iScanner.next();
+    int b = iScanner.nextInt();
+    int result = switch (sim) {
+      case "+" -> a + b;
+      case "-" -> a - b;
+      case "*" -> a * b;
+      case "/" -> a / b;
+      default -> 0;
+    };
+    System.out.print("= ");
+    System.out.print(result);
+  }
+
+  public static void main(String[] args) {
+    Task_3();
+  }
+}
+```
+Ввод консоли:
+```CMD
+5
+/
+5
+```
+Вовод консоли:
+```CMD
+= 1
+```
+----

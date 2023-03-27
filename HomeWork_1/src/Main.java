@@ -32,13 +32,14 @@ Task_3.
 Реализовать простой калькулятор (+,-,=,*), только с целыми числами.
 
 Task_4. *
-+Задано уравнение вида q + w = e, q, w, e >= 0.
++Задано уравнение вида q + w = e,
+q, w, e >= 0.
 Некоторые цифры могут быть заменены знаком вопроса, например, 2? + ?5 = 69.
 Требуется восстановить выражение до верного равенства.
 Предложить хотя бы одно решение или сообщить, что его нет.
      */
 
-    public static int Task_1(int n){
+    public static int task_1(int n){
         int[] arr = new int[1000];
         for(int i = 1; i < 1000; i++){
             arr[i] = i*i*i;
@@ -46,7 +47,7 @@ Task_4. *
         return arr[n];
     }
 
-    public static int[] Task_2(){
+    public static int[] task_2(){
         Scanner iScanner = new Scanner(System.in);
         int cnt = iScanner.nextInt();
         int[] arr = new int[cnt];
@@ -62,7 +63,7 @@ Task_4. *
         return arr;
     }
 
-    public static void Task_3(){
+    public static void task_3(){
         Scanner iScanner = new Scanner(System.in);
         int a = iScanner.nextInt();
         String sim = iScanner.next();
@@ -78,7 +79,49 @@ Task_4. *
         System.out.print(result);
     }
 
+    public static void task_4_1(){
+        for(int q = 0; q <= 99; q++){
+            for(int w = 0; w <= 99; w++){
+                for (int e = 0; e <= 99; e++){
+                    if(q+w==e){
+                        System.out.println(q+"+"+w+"="+e);
+                    }
+                }
+            }
+        }
+    }
+    public static int getInt(String st){
+        Scanner scan = new Scanner(st);
+        scan.useDelimiter("\\D+");
+        if (st.indexOf("?") == st.length()-1){
+            return 10 * scan.nextInt();
+        }else{
+             return scan.nextInt();
+        }
+    }
+
     public static void main(String[] args) {
-        Task_3();
+        String word = "7? + ?5 = 92";
+        Scanner iScanner = new Scanner(System.in);
+        word = iScanner.nextLine();
+        word = word.replace(" ", "");
+        String[] arr = word.split("[+=]");
+
+        int a = getInt(arr[0]);
+        int b = getInt(arr[1]);
+        int c = getInt(arr[2]);
+
+        if (a > b && a > 10) {
+            a = a + b;
+            b = c - a;
+        }else if(b > a && b > 10){
+            b = a + b;
+            a = c - b;
+        }
+        if(a+b == c){
+            System.out.println(a + " + " + b + " = "+ c);
+        }else{
+            System.out.println("False");
+        }
     }
 }

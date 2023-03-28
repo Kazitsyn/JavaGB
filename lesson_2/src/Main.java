@@ -5,7 +5,7 @@ public class Main {
         String PATTERN = "^((0|1\\d?\\d?|2[0-4]?\\d?|25[0-5]?|[3-9]\\d?)\\.){3}(0|1\\d?\\d?|2[0-4]?\\d?|25[0-5]?|[3-9]\\d?)$";
         return ip.matches(PATTERN);
     }
-//    private static Scanner scan = new Scanner(System.in);
+    private static Scanner scan = new Scanner(System.in);
     public static void main(String[] args) {
 //        -----------------Task 1----------------------
 //        String numbers = "4 5 3 5 2 6 4 6 6 8 1 2 3 8 4 0 9 7";
@@ -49,22 +49,20 @@ public class Main {
 
 
 //        Scanner iScanner = new Scanner(System.in);
-//        System.out.printf("любимая буква Маши: ");
+//        System.out.print("любимая буква Маши: ");
 //        String ipAdress = iScanner.next();
 //        String[] ip = ipAdress.split("[.]");
-//        //for(String i : ip){
-//        //   System.out.println(i);
-//        //}
 //        int count = 0;
 //        if (ip.length == 4){
-//            for(int i = 0; i < ip.length; i++){
-//                Scanner scan = new Scanner(ip[i]);
+//            for (String s : ip) {
+//                Scanner scan = new Scanner(s);
 //                scan.useDelimiter("\\D+");
 //                int scanInt = scan.nextInt();
-//                if (scanInt >= 0 && scanInt < 256){
+//                if (scanInt >= 0 && scanInt < 256) {
 //                    count++;
 //
-//                }}
+//                }
+//            }
 //            if (count == 4){
 //                System.out.println("yes");
 //            }
@@ -85,24 +83,24 @@ public class Main {
 //            }
 //        }
 //        System.out.println(count);
-//    }
+
 //        ------------------------------------
-//        String str = "asdhkas34898ojd";
-//        int didgitsCnt = 0;
-//        int alphaCnt = 0;
-//        for (int i = 0; i < str.length(); i++) {
-//            char item = str.charAt(i);
-//            if (Character.isDigit(item)) {
-//                didgitsCnt++;
-//            }
-//            if (Character.isLetter(item)) {
-//                alphaCnt++;
-//            }
-//        }
-//        if (didgitsCnt > alphaCnt) {
-//            System.out.println("Digit");
-//        }
-//        else System.out.println("Alpha");
+        String str = "asdhkas34898ojd";
+        int didgitsCnt = 0;
+        int alphaCnt = 0;
+        for (int i = 0; i < str.length(); i++) {
+            char item = str.charAt(i);
+            if (Character.isDigit(item)) {
+                didgitsCnt++;
+            }
+            if (Character.isLetter(item)) {
+                alphaCnt++;
+            }
+        }
+        if (didgitsCnt > alphaCnt) {
+            System.out.println("Digit");
+        }
+        else System.out.println("Alpha");
 
 
 

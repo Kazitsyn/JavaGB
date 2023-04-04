@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class Main {
     /*
     Task_1.
@@ -39,31 +40,31 @@ q, w, e >= 0.
 Предложить хотя бы одно решение или сообщить, что его нет.
      */
 
-    public static int task_1(int n){
+    public static int task_1(int n) {
         int[] arr = new int[1000];
-        for(int i = 1; i < 1000; i++){
-            arr[i] = i*i*i;
+        for (int i = 1; i < 1000; i++) {
+            arr[i] = i * i * i;
         }
         return arr[n];
     }
 
-    public static int[] task_2(){
+    public static int[] task_2() {
         Scanner iScanner = new Scanner(System.in);
         int cnt = iScanner.nextInt();
         int[] arr = new int[cnt];
-        for(int i = 0; i < cnt; i++){
+        for (int i = 0; i < cnt; i++) {
             System.out.print("arr[ ] = ");
             arr[i] = iScanner.nextInt();
         }
         System.out.print("m = ");
         int m = iScanner.nextInt();
-        for(int i = 0; i < cnt; i++){
+        for (int i = 0; i < cnt; i++) {
             arr[i] *= m;
         }
         return arr;
     }
 
-    public static void task_3(){
+    public static void task_3() {
         Scanner iScanner = new Scanner(System.in);
         int a = iScanner.nextInt();
         String sim = iScanner.next();
@@ -79,24 +80,25 @@ q, w, e >= 0.
         System.out.print(result);
     }
 
-    public static void task_4_1(){
-        for(int q = 0; q <= 99; q++){
-            for(int w = 0; w <= 99; w++){
-                for (int e = 0; e <= 99; e++){
-                    if(q+w==e){
-                        System.out.println(q+"+"+w+"="+e);
+    public static void task_4_1() {
+        for (int q = 0; q <= 99; q++) {
+            for (int w = 0; w <= 99; w++) {
+                for (int e = 0; e <= 99; e++) {
+                    if (q + w == e) {
+                        System.out.println(q + "+" + w + "=" + e);
                     }
                 }
             }
         }
     }
-    public static int getInt(String st){
+
+    public static int getInt(String st) {
         Scanner scan = new Scanner(st);
         scan.useDelimiter("\\D+");
-        if (st.indexOf("?") == st.length()-1){
+        if (st.indexOf("?") == st.length() - 1) {
             return 10 * scan.nextInt();
-        }else{
-             return scan.nextInt();
+        } else {
+            return scan.nextInt();
         }
     }
 
@@ -114,13 +116,13 @@ q, w, e >= 0.
         if (a > b && a > 10) {
             a = a + b;
             b = c - a;
-        }else if(b > a && b > 10){
+        } else if (b > a && b > 10) {
             b = a + b;
             a = c - b;
         }
-        if(a+b == c){
-            System.out.println(a + " + " + b + " = "+ c);
-        }else{
+        if (a + b == c) {
+            System.out.println(a + " + " + b + " = " + c);
+        } else {
             System.out.println("False");
         }
     }

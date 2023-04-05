@@ -1,5 +1,8 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 public class Main {
+    private static Scanner scan = new Scanner(System.in);
 
     // Пример: s = “cba”, index = [3,2,1] result “abc”
     public static String findJewelsInStones(String jewels, String stones) {
@@ -25,21 +28,52 @@ public class Main {
         return res;
     }
 
-    public static void main(String[] args) {
-        Scanner iScanner = new Scanner(System.in);
-        String st = "cba";
-        int temp = 0;
-        int [] arr = new int[st.length()];
-        for (int i = 0; i < st.length(); i++){
-            temp = iScanner.nextInt();
-            if (temp > st.length()){
-                arr[i] = st.length();
-            } else if (temp < 0) {
-                arr[i] = 0;
-            }else{
-                arr[i] = temp - 1;
-            }
+    public static String[] task2recept(){
+        System.out.print("Количество строчек в книге: ");
+        int n = scan.nextInt();
+        scan.nextLine();
+        String[] recept = new String[n];
+        for (int i = 0; i < n; i++){
+            recept[i] = scan.nextLine();
         }
-        System.out.println(shuffle(st,arr));
+        return recept;
+    }
+    public static List<String[]> task2product(){
+        System.out.print("Количество продуктов: ");
+        int m = scan.nextInt();
+        scan.nextLine();
+        List<String[]> product = new ArrayList<>();
+        for (int i = 0; i < m; i++){
+            String[] words = scan.nextLine().replace(" ", "").split("[-]");
+            product.add(words);
+        }
+        return product;
+    }
+
+    public static String newLine(List<String[]> listArr , String line){
+        int l = listArr.size();
+        for (int i = 0; i < l; i++){
+            String temp1 = listArr.get(i)[0];
+            String temp2 = listArr.get(i)[1];
+            String temp3 = temp1.substring(0, 1).toUpperCase() + temp1.substring(1);
+            String temp4 = temp2.substring(0, 1).toUpperCase() + temp2.substring(1);
+            line = line.replaceAll(temp1, temp2);
+            line = line.replaceAll(temp3, temp4);
+        }
+        return line;
+    }
+    public static void task2show(String[] arr){
+        for (String item: arr){
+            System.out.println(item);
+        }
+
+    }
+    public static void main(String[] args) {
+        String[] recept = task2recept();
+        List<String[]> listArr = task2product();
+        for (int i = 0; i < recept.length; i++){
+            recept[i] = newLine(listArr, recept[i]);
+        }
+        task2show(recept);
     }
 }

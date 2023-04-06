@@ -15,7 +15,6 @@ public class Main {
     public static List<Integer> removeEvenValue(List<Integer> list){
         List<Integer> list1 = new ArrayList<>();
         for(int i = 0; i < list.size(); i++){
-
             if(list.get(i) % 2 != 0){
                 list1.add(list.get(i));
             }

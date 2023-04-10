@@ -25,9 +25,7 @@ public class Main {
 
     public static boolean checkOn(Deque<Integer> deque){
             while (deque.size() > 1){
-                if (deque.removeFirst() == deque.removeLast()){
-
-                }else {
+                if (deque.removeFirst() != deque.removeLast()){
                     return false;
                 }
             }
@@ -94,5 +92,7 @@ public class Main {
         Deque<Integer> d2 = new ArrayDeque<>(Arrays.asList(5,4,7));
         System.out.print(sum(d1,d2));
 
+//        Deque<Integer> deque = new ArrayDeque<>(Arrays.asList(1,2,3,4,5,6));
+//        System.out.println(checkOn(deque));
     }
 }
